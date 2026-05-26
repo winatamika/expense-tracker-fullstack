@@ -7,9 +7,15 @@ const emptyForm = {
 
 export default function TransactionForm({ form, setForm, onSubmit, isSaving }) {
   const updateField = (field, value) => setForm((current) => ({ ...current, [field]: value }));
+  const fieldClass = "grid min-w-0 gap-2 text-sm font-medium text-slate-700";
+  const controlClass =
+    "min-w-0 w-full rounded-lg border border-slate-200 px-3 py-2.5 text-slate-950 outline-none transition focus:border-sky-400 focus:ring-4 focus:ring-sky-100";
 
   return (
-    <form onSubmit={onSubmit} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+    <form
+      onSubmit={onSubmit}
+      className="w-full min-w-0 max-w-full overflow-hidden rounded-lg border border-slate-200 bg-white p-5 shadow-sm"
+    >
       <div className="flex items-center justify-between gap-4">
         <h2 className="text-lg font-semibold text-slate-950">Add transaction</h2>
         <button
@@ -21,19 +27,19 @@ export default function TransactionForm({ form, setForm, onSubmit, isSaving }) {
         </button>
       </div>
 
-      <div className="mt-5 grid gap-4 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm font-medium text-slate-700">
+      <div className="mt-5 grid min-w-0 grid-cols-1 gap-4 md:grid-cols-2">
+        <label className={fieldClass}>
           Title
           <input
             required
             value={form.title}
             onChange={(event) => updateField("title", event.target.value)}
             placeholder="Lunch, salary, rent"
-            className="rounded-lg border border-slate-200 px-3 py-2.5 text-slate-950 outline-none transition focus:border-sky-400 focus:ring-4 focus:ring-sky-100"
+            className={controlClass}
           />
         </label>
 
-        <label className="grid gap-2 text-sm font-medium text-slate-700">
+        <label className={fieldClass}>
           Amount
           <input
             required
@@ -43,30 +49,30 @@ export default function TransactionForm({ form, setForm, onSubmit, isSaving }) {
             value={form.amount}
             onChange={(event) => updateField("amount", event.target.value)}
             placeholder="0.00"
-            className="rounded-lg border border-slate-200 px-3 py-2.5 text-slate-950 outline-none transition focus:border-sky-400 focus:ring-4 focus:ring-sky-100"
+            className={controlClass}
           />
         </label>
 
-        <label className="grid gap-2 text-sm font-medium text-slate-700">
+        <label className={fieldClass}>
           Type
           <select
             value={form.type}
             onChange={(event) => updateField("type", event.target.value)}
-            className="rounded-lg border border-slate-200 px-3 py-2.5 text-slate-950 outline-none transition focus:border-sky-400 focus:ring-4 focus:ring-sky-100"
+            className={controlClass}
           >
             <option value="expense">Expense</option>
             <option value="income">Income</option>
           </select>
         </label>
 
-        <label className="grid gap-2 text-sm font-medium text-slate-700">
+        <label className={fieldClass}>
           Category
           <input
             required
             value={form.category}
             onChange={(event) => updateField("category", event.target.value)}
             placeholder="Food, work, bills"
-            className="rounded-lg border border-slate-200 px-3 py-2.5 text-slate-950 outline-none transition focus:border-sky-400 focus:ring-4 focus:ring-sky-100"
+            className={controlClass}
           />
         </label>
       </div>

@@ -106,7 +106,7 @@ export default function App() {
           ))}
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-[380px_1fr] lg:items-start">
+        <section className="grid min-w-0 gap-6 lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)] lg:items-start">
           <TransactionForm form={form} setForm={setForm} onSubmit={handleSubmit} isSaving={isSaving} />
           <TransactionList transactions={transactions} onDelete={handleDelete} />
         </section>

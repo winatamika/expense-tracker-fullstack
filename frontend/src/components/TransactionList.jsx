@@ -1,14 +1,14 @@
 export default function TransactionList({ transactions, onDelete }) {
   if (!transactions.length) {
     return (
-      <section className="rounded-lg border border-dashed border-slate-300 bg-white p-8 text-center text-slate-500">
+    <section className="min-w-0 rounded-lg border border-dashed border-slate-300 bg-white p-8 text-center text-slate-500">
         No transactions yet.
       </section>
     );
   }
 
   return (
-    <section className="rounded-lg border border-slate-200 bg-white shadow-sm">
+    <section className="min-w-0 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
       <div className="border-b border-slate-200 px-5 py-4">
         <h2 className="text-lg font-semibold text-slate-950">Transactions</h2>
       </div>
