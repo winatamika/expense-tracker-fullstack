@@ -79,12 +79,14 @@ CORS_ALLOWED_ORIGINS = config(
     cast=Csv(),
 )
 
-REST_FRAMEWORK = {
-    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
-}
-
 SPECTACULAR_SETTINGS = {
     "TITLE": "Expense Tracker API",
     "DESCRIPTION": "CRUD and monthly summary endpoints for personal transactions.",
     "VERSION": "1.0.0",
 }
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+
